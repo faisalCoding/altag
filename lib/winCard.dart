@@ -2,29 +2,13 @@ import 'package:flutter/material.dart';
 import 'fontStyle.dart';
 import 'package:dotted_border/dotted_border.dart';
 
-class WinCard extends StatefulWidget {
+class WinCard extends StatelessWidget {
   BuildContext context;
   Color color;
   String text;
   int number;
 
   WinCard({this.context, this.color, this.text, this.number});
-
-  @override
-  _WinCardState createState() => _WinCardState(
-      context: this.context,
-      color: this.color,
-      text: this.text,
-      number: this.number);
-}
-
-class _WinCardState extends State<WinCard> {
-  BuildContext context;
-  Color color;
-  String text;
-  int number;
-
-  _WinCardState({this.context, this.color, this.text, this.number});
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +78,7 @@ class _WinCardState extends State<WinCard> {
               ),
               Center(
                 child: Text(
-                  "خالد الزهراني",
+                  text ?? "______________",
                   style: h1(color: Colors.black),
                 ),
               )

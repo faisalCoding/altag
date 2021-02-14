@@ -3,15 +3,7 @@ import 'fontStyle.dart';
 
 // ignore: must_be_immutable
 class StudenCardState extends StatefulWidget {
-  String name;
-
-  String hfrom;
-
-  String hto;
-
-  String mto;
-
-  String mfrom;
+  String name, hfrom, hto, mto, mfrom;
 
   List<bool> list = [false, false, false];
 
@@ -126,10 +118,10 @@ class _StudenCardStateState extends State<StudenCardState> {
               crossAxisAlignment: CrossAxisAlignment.end,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                listItem(isDo: this.list[0] ?? false, text: 'أول شخص يسمع'),
+                listItem(isDo: this.list[0] ?? false, text: 'أول طالب يسمع'),
+                listItem(isDo: this.list[1] ?? false, text: 'تسميع بدون اخطاء'),
                 listItem(
-                    isDo: this.list[1] ?? false, text: 'تكرار الحفظ 20 مرة'),
-                listItem(isDo: this.list[2] ?? false, text: 'تسميع بدون اخطاء')
+                    isDo: this.list[2] ?? false, text: 'تكرار الحفظ 20 مرة')
               ],
             ),
           ),
@@ -231,7 +223,8 @@ class _StudenCardStateState extends State<StudenCardState> {
                         ),
                   Text(
                     this.name,
-                    style: h1(color: Colors.black),
+                    style: h3(color: Colors.black),
+                    textAlign: TextAlign.right,
                   )
                 ],
               ),
@@ -253,6 +246,7 @@ class _StudenCardStateState extends State<StudenCardState> {
                             child: Text(
                               this.mto,
                               style: ls(color: Colors.black54),
+                              textAlign: TextAlign.center,
                             ),
                           ),
                         ),
@@ -265,8 +259,11 @@ class _StudenCardStateState extends State<StudenCardState> {
                         width: 65,
                         height: 35,
                         child: Center(
-                            child: Text(this.mfrom,
-                                style: ls(color: Colors.black54))),
+                            child: Text(
+                          this.mfrom,
+                          style: ls(color: Colors.black54),
+                          textAlign: TextAlign.center,
+                        )),
                       )
                     ],
                   ),
@@ -282,8 +279,11 @@ class _StudenCardStateState extends State<StudenCardState> {
                           width: 65,
                           height: 35,
                           child: Center(
-                            child: Text(this.hto,
-                                style: ls(color: Colors.black54)),
+                            child: Text(
+                              this.hto,
+                              style: ls(color: Colors.black54),
+                              textAlign: TextAlign.center,
+                            ),
                           ),
                         ),
                       ),
@@ -295,8 +295,11 @@ class _StudenCardStateState extends State<StudenCardState> {
                         width: 65,
                         height: 35,
                         child: Center(
-                            child: Text(this.hfrom,
-                                style: ls(color: Colors.black54))),
+                            child: Text(
+                          this.hfrom,
+                          style: ls(color: Colors.black54),
+                          textAlign: TextAlign.center,
+                        )),
                       )
                     ],
                   ),
